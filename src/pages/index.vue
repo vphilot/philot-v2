@@ -32,7 +32,7 @@ onMounted(() => {
 <template>
   <h1 class="text-5xl md:text-6xl lg:text-9xl font-thin">
     <span class="relative">
-      <button class="absolute -right-10 rounded-full" @click="spellingHelp = !spellingHelp">
+      <button class="absolute -right-10 rounded-full" aria-label="toggle spelling help" @click="spellingHelp = !spellingHelp">
         <Icon v-if="spellingHelp" icon="fluent:speaker-off-20-regular" width="64" class="w-8 h-8" />
         <Icon v-else icon="fluent:speaker-2-20-regular" width="64" class="w-8 h-8" />
       </button>

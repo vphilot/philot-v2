@@ -10,7 +10,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 import Inspect from 'vite-plugin-inspect'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
-import { ViteWebfontDownload } from 'vite-plugin-webfont-dl'
+import ViteFonts from 'vite-plugin-fonts'
 
 const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
 
@@ -123,9 +123,31 @@ export default defineConfig({
       enabled: false,
     }),
 
-    ViteWebfontDownload([
-      'https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;1,300&family=IBM+Plex+Sans:wght@100;200;400&family=Roboto+Serif:ital,wght@0,200;0,500;1,200&display=swap',
-    ]),
+    // ViteWebfontDownload([
+    //   'https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;1,300&family=IBM+Plex+Sans:wght@100;200;400&family=Roboto+Serif:ital,wght@0,200;0,500;1,200&display=swap',
+    // ]),
+
+    ViteFonts({
+      google: {
+        families: [
+          {
+            name: 'IBM Plex Sans',
+            styles: 'wght@100;200;400',
+            defer: true,
+          },
+          {
+            name: 'Roboto Serif',
+            styles: 'ital,wght@0,200;0,500;1,200',
+            defer: true,
+          },
+          {
+            name: 'DM Mono',
+            styles: 'ital,wght@0,300;1,300',
+            defer: true,
+          },
+        ],
+      },
+    }),
   ],
 
   // https://github.com/antfu/vite-ssg

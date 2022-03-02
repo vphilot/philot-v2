@@ -16,11 +16,9 @@
     "@vueuse/head": "^0.7.5",
     "dracula-prism": "^2.1.7",
     "nprogress": "^0.2.0",
-    "pinia": "^2.0.11",
     "prism-theme-vars": "^0.2.2",
     "vue": "^3.2.31",
     "vue-demi": "^0.12.1",
-    "vue-i18n": "^9.1.9",
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
@@ -48,12 +46,12 @@
     "unplugin-auto-import": "^0.6.1",
     "unplugin-vue-components": "^0.17.19",
     "vite": "^2.8.4",
+    "vite-plugin-fonts": "^0.2.2",
     "vite-plugin-inspect": "^0.3.15",
     "vite-plugin-md": "^0.11.8",
     "vite-plugin-pages": "^0.20.2",
     "vite-plugin-pwa": "^0.11.13",
     "vite-plugin-vue-layouts": "^0.6.0",
-    "vite-plugin-webfont-dl": "^1.0.9",
     "vite-ssg": "^0.17.10",
     "vitest": "^0.5.3",
     "vue-tsc": "^0.31.4"
