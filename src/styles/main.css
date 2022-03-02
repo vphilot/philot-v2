@@ -1,0 +1,8 @@
+@import './markdown.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ul li {
+  @apply mb-2;
+}
