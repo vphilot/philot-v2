@@ -76,7 +76,7 @@ onMounted(() => {
         (sup! 👋)
       </h2>
       <p class="mb-8">
-        I build Web applications for a living and I thrive in enrivonments that encourage collaboration and ego-free dynamics. I believe in accessibility and inclusivity as core values for us to work towards a better Web.
+        I build Web applications for a living and I thrive in environments that encourage collaboration and ego-free dynamics. I believe in accessibility and inclusivity as core values for us to work towards a better Web.
       </p>
 
       <div class="grid md:grid-cols-6 gap-4 md:gap-8 mb-8 items-center">
@@ -172,10 +172,9 @@ onMounted(() => {
         Background
       </h2>
       <p>
-        I started building websites for friends and family with Flash when I was 17 yo as a self-taught ActionScript2 developer. I kept flirting with Web technologies as a hobby over the years while exploring other career perspectives, until I decided it was time to pursue doing what I love full time.
+        I started building websites for friends and family with Flash when I was 17 yo as a self-taught ActionScript2 developer. I kept flirting with Web technologies as a hobby over the years while exploring other career perspectives until I decided it was time to pursue doing what I love full time.
       </p>
     </section>
-
     <section class="md:col-span-2">
       <h2 class="font-sans font-extralight md:font-thin text-3xl mb-4 lg:text-5xl leading-tight">
         Apps & gear
@@ -253,7 +252,7 @@ onMounted(() => {
           in the Atlantic forest, grandson of farmers, and proud of every single tiny victory I've accomplished.
         </li>
         <li>
-          I was an Architect before working with Web Development full time. I carry a lot of analytical thinking and design strategy/planning from the great experiences I had back then. Just took me many years of education and work expeirence to realize I really liked computers after all.
+          I was an Architect before working with Web Development full time. I carry a lot of analytical thinking and design strategy/planning from the great experiences I had back then. Just took me many years of education and work experience to realize I really liked computers after all.
         </li>
         <li>
           I'm into biking, skating, gaming, and painting.
