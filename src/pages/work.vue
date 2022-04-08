@@ -25,11 +25,13 @@ useHead({
       <p class="mb-4">
         Our first platform, <em>Workflow</em>, focused on the print-on-demand market by making it easy for merchants and artists to communicate, review, and ship their work.
       </p>
-      <p class="mb-4">
-        We are now tapping into the Web3 space with <em>Remx</em>, a digital creative community focused on art, culture, & identity.
+      <p>
+        We are now tapping into the Web3 space with <em> <Link title="Remx" url="https://remx.xyz/">
+          Remx
+        </Link></em>, a digital creative community focused on art, culture, & identity.
       </p>
     </section>
-    <section class="">
+    <section class="mb-8">
       <div class="flex items-center space-x-4 mb-4">
         <h1 class="text-3xl md:text-4xl font-thin tracking-wide font-sans">
           Prev: Front-end Software Developer at Cineplex
@@ -37,10 +39,17 @@ useHead({
       </div>
       <ul class="pl-4 list-disc">
         <li>Worked with a team of developers and designers implementing a Front End modernization project from .NET MVC to Jamstack (Next.js and React)</li>
-        <li>Delivered AODA / WCAG compliant pages inside Cineplex, CineplexStore, and TheRecRoom</li>
+        <li>Delivered AODA / WCAG compliant solutions inside Cineplex, CineplexStore, and TheRecRoom</li>
         <li>Built web components using vanilla JavaScript, React, and Vue</li>
         <li>Transformed inline layouts into modularized templates, decoupling data and views using a headless CMS</li>
       </ul>
+    </section>
+    <section class="">
+      <p>
+        If we're going <em>vintage</em> <Link url="/" download>
+          you can download my résume here
+        </Link>
+      </p>
     </section>
   </div>
 </template>
