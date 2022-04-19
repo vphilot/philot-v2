@@ -46,7 +46,7 @@ useHead({
     </section>
     <section class="">
       <p>
-        If we're going <em>vintage</em> <Link url="/" download>
+        If we're going <em>vintage</em> <Link url="./docs/2022-viniciusphilot-resume.pdf" download>
           you can download my résume here
         </Link>
       </p>
