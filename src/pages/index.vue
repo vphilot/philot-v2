@@ -7,6 +7,7 @@ import ReactIcon from '#/components/icons/ReactIcon.vue'
 import TypescriptIcon from '#/components/icons/TypescriptIcon.vue'
 import CSSIcon from '#/components/icons/CSSIcon.vue'
 import HTMLIcon from '#/components/icons/HTMLIcon.vue'
+import DividerY from '#/components/shared/DividerY.vue'
 
 const Icons = [
   FrontEndIcon,
@@ -70,9 +71,11 @@ onMounted(() => {
     developer
   </h1>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full md:w-2/3 pt-8 mt-8 md:mt-16 md:pt-16 border-t border-t-gray-500 font-serif font-extralight text-lg tracking-wide leading-relaxed">
+  <DividerY border />
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 w-full md:w-2/3 font-serif font-extralight text-lg tracking-wide leading-relaxed">
     <section class="md:col-span-2">
-      <h2 class="font-sans font-extralight md:font-thin text-3xl mb-4 lg:text-5xl leading-tight">
+      <h2 class="font-sans font-extralight md:font-thin text-3xl mb-8 lg:text-5xl leading-tight">
         (sup! 👋)
       </h2>
       <p class="mb-8">
@@ -101,18 +104,19 @@ onMounted(() => {
 
       <div class="flex space-x-2">
         <a rel="noreferrer" href="https://github.com/vphilot" title="Github" target="_blank">
-          <Icon icon="iconoir:github" width="64" class="w-8 text-blue-500" />
+          <Icon icon="iconoir:github" width="64" class="w-8 h-8 text-blue-500" />
         </a>
         <a rel="noreferrer" href="https://www.linkedin.com/in/vphilot/?locale=en_US" title="Linkedin" target="_blank">
-          <Icon icon="iconoir:linkedin" width="64" class="w-8 text-blue-500" />
+          <Icon icon="iconoir:linkedin" width="64" class="w-8 h-8 text-blue-500" />
         </a>
         <a rel="noreferrer" href="https://twitter.com/vphilot" title="Twitter" target="_blank">
-          <Icon icon="iconoir:twitter" width="64" class="w-8 text-blue-500" />
+          <Icon icon="iconoir:twitter" width="64" class="w-8 h-8 text-blue-500" />
         </a>
       </div>
+      <DividerY />
     </section>
 
-    <section class="">
+    <section>
       <h2 class="font-sans font-extralight md:font-thin text-3xl mb-4 lg:text-5xl leading-tight">
         Motto
       </h2>
@@ -137,6 +141,7 @@ onMounted(() => {
           </li>
         </ul>
       </p>
+      <DividerY />
     </section>
 
     <section class="">
@@ -165,6 +170,7 @@ onMounted(() => {
           </li>
         </ul>
       </p>
+      <DividerY />
     </section>
 
     <section class="md:col-span-2">
@@ -174,7 +180,9 @@ onMounted(() => {
       <p>
         I started building websites for friends and family with Flash when I was 17 yo as a self-taught ActionScript2 developer. I kept flirting with Web technologies as a hobby over the years while exploring other career perspectives until I decided it was time to pursue doing what I love full time.
       </p>
+      <DividerY />
     </section>
+
     <section class="md:col-span-2">
       <h2 class="font-sans font-extralight md:font-thin text-3xl mb-4 lg:text-5xl leading-tight">
         Apps & gear
@@ -225,9 +233,12 @@ onMounted(() => {
           </Link>,
           <Link title="ColorSlurp" url="https://colorslurp.com/">
             ColorSlurp
-          </Link>, and
+          </Link>,
           <Link title="Amphetamine" url="https://apps.apple.com/us/app/amphetamine/id937984704?mt=12">
             Amphetamine
+          </Link>,  and
+          <Link title="Raycast" url="https://www.raycast.com/">
+            Raycast
           </Link>
         </li>
         <li>
@@ -237,6 +248,7 @@ onMounted(() => {
           </Link> &nbsp; since late 2020
         </li>
       </ul>
+      <DividerY />
     </section>
 
     <section class="md:col-span-2">
@@ -258,6 +270,7 @@ onMounted(() => {
           I'm into biking, skating, gaming, and painting.
         </li>
       </ul>
+      <DividerY />
     </section>
 
     <section class="md:col-span-2">
@@ -286,6 +299,7 @@ onMounted(() => {
           @Anthony Fu
         </Link>.
       </p>
+      <DividerY />
     </section>
   </div>
 </template>

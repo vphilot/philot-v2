@@ -6,6 +6,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     Container: typeof import('./components/shared/Container.vue')['default']
     CSSIcon: typeof import('./components/icons/CSSIcon.vue')['default']
+    DividerY: typeof import('./components/shared/DividerY.vue')['default']
     FrontEndIcon: typeof import('./components/icons/FrontEndIcon.vue')['default']
     HTMLIcon: typeof import('./components/icons/HTMLIcon.vue')['default']
     Link: typeof import('./components/shared/Link.vue')['default']

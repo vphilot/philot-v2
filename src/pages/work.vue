@@ -9,7 +9,7 @@ useHead({
 
 <template>
   <div class="w-full md:w-2/3 font-serif font-extralight text-lg tracking-wide leading-relaxed">
-    <section class="mb-8">
+    <section>
       <h1 class="text-4xl md:text-5xl font-extralight md:font-thin tracking-wide mb-8 font-sans bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-pink-500 dark:from-blue-500 dark:to-green-400">
         Currently: Intermediate Front-end Developer at
         <Link title="Creative Layer" url="https://www.creativelayer.com/" class="" :dashed="false">
@@ -20,7 +20,7 @@ useHead({
         </Link>
       </h1>
       <p class="mb-4">
-        I joined CL in early 2021 as a remote staff developer, working from Toronto with an amazing team of developers located all over Ontario. We build tools to empower creators by giving them access to new revenue streams.
+        I joined CL in early 2021 as a remote engineer, working from Toronto with an amazing team of developers located all over Ontario. We build tools to empower creators by giving them access to new revenue streams.
       </p>
       <p class="mb-4">
         Our first platform, <em>Workflow</em>, focused on the print-on-demand market by making it easy for merchants and artists to communicate, review, and ship their work.
@@ -31,7 +31,9 @@ useHead({
         </Link></em>, a digital creative community focused on art, culture, & identity.
       </p>
     </section>
-    <section class="mb-8">
+    <DividerY />
+
+    <section>
       <div class="flex items-center space-x-4 mb-4">
         <h1 class="text-3xl md:text-4xl font-thin tracking-wide font-sans">
           Prev: Front-end Software Developer at Cineplex
@@ -44,12 +46,15 @@ useHead({
         <li>Transformed inline layouts into modularized templates, decoupling data and views using a headless CMS</li>
       </ul>
     </section>
-    <section class="">
+    <DividerY />
+
+    <section>
       <p>
         If we're going <em>vintage</em> <Link url="./docs/2022-viniciusphilot-resume.pdf" download>
           you can download my résume here
         </Link>
       </p>
     </section>
+    <DividerY />
   </div>
 </template>
