@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { AmbientLight, Box3, Clock, Color, Mesh, MeshStandardMaterial, PerspectiveCamera, PlaneGeometry, Scene, ShaderMaterial, SphereGeometry, SpotLight, Vector3, WebGLRenderer } from 'three'
+import { AmbientLight, Box3, Clock, Color, EdgesGeometry, Line, LineBasicMaterial, LineSegments, Mesh, MeshStandardMaterial, PerspectiveCamera, PlaneGeometry, Scene, ShaderMaterial, SphereGeometry, SpotLight, Vector3, WebGLRenderer, WireframeGeometry } from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 import { makeNoise4D } from 'open-simplex-noise'
@@ -26,20 +26,20 @@ renderer.setSize(1024, 1024)
 const camera = new PerspectiveCamera(50, 1, 0.1, 1000)
 camera.position.set(4.6, 5.5, 4.5)
 const orbitControls = new OrbitControls(camera, renderer.domElement)
-// orbitControls.enablePan = false
+orbitControls.enablePan = false
 // orbitControls.enableRotate = false
-// orbitControls.enableZoom = false
+orbitControls.enableZoom = false
 
 // lights
-const ambientLight = new AmbientLight(0xFFFFFF, 0.5)
-const spotLight1 = new SpotLight(0xFFFFFF, 0.5)
-spotLight1.castShadow = true
-spotLight1.position.set(2, 10, 2)
+// const ambientLight = new AmbientLight(0xFFFFFF, 0.5)
+// const spotLight1 = new SpotLight(0xFFFFFF, 0.5)
+// spotLight1.castShadow = true
+// spotLight1.position.set(2, 10, 2)
 
-scene.add(ambientLight)
-scene.add(spotLight1)
+// scene.add(ambientLight)
+// scene.add(spotLight1)
 
-scene.background = new Color('#ddd')
+scene.background = new Color('#000')
 
 // geometry
 const sphereGeometry = new SphereGeometry(1.5, 100, 100)
@@ -75,14 +75,13 @@ scene.add(sphereMesh)
 camera.lookAt(sphereMesh.position)
 orbitControls.target = sphereMesh.position
 
-const planeGeometry = new PlaneGeometry(100, 100, 100, 10)
-const planeMaterial = new MeshStandardMaterial()
-const planeMesh = new Mesh(planeGeometry, planeMaterial)
-planeMesh.rotateX(-Math.PI / 2)
-planeMesh.receiveShadow = true
-planeMesh.castShadow = false
+const planeGeometry = new PlaneGeometry(100, 100, 100, 100)
+const planeWireframe = new WireframeGeometry(planeGeometry)
+const planeMaterial = new LineBasicMaterial({ color: 0xAAAAAA, linewidth: 1 })
+const planeLines = new LineSegments(planeWireframe, planeMaterial)
+planeWireframe.rotateX(-Math.PI / 2)
 
-scene.add(planeMesh)
+scene.add(planeLines)
 
 const noise = makeNoise4D(Date.now())
 const clock = new Clock()
@@ -113,7 +112,7 @@ const refresh = async() => {
 
 onMounted(async() => {
   (document.querySelector('#renderer') as HTMLElement).appendChild(renderer.domElement)
-  setHelpers(scene)
+  // setHelpers(scene)
   // direct camera
   await refresh()
 })
