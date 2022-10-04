@@ -13,7 +13,7 @@
 }
 
 .prose p {
-  @apply font-serif font-extralight text-lg tracking-wide mb-4 leading-relaxed;
+  @apply font-sans font-extralight text-lg tracking-wide mb-4 leading-relaxed;
 }
 
 .prose strong {

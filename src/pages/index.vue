@@ -73,7 +73,7 @@ onMounted(() => {
 
   <DividerY border />
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 w-full md:w-2/3 font-serif font-extralight text-lg tracking-wide leading-relaxed">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 w-full md:w-2/3 font-sans font-extralight text-lg tracking-wide leading-relaxed">
     <section class="md:col-span-2">
       <h2 class="font-sans font-extralight md:font-thin text-3xl mb-8 lg:text-5xl leading-tight">
         (sup! 👋)

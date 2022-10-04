@@ -36,7 +36,7 @@ useHead({
           <h2 class="text-3xl lg:text-5xl font-extralight md:font-thin tracking-wide lg:leading-snug">
             {{ post.name }}
           </h2>
-          <p class="font-serif font-extralight text-lg tracking-wide">
+          <p class="font-extralight text-lg tracking-wide">
             {{ formatDate(post.date) }}
           </p>
         </div>

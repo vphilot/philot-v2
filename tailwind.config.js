@@ -10,8 +10,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"IBM Plex Sans"', ...defaultTheme.fontFamily.sans],
-        serif: ['"Roboto Serif"', ...defaultTheme.fontFamily.serif],
+        sans: ['"Switzer-Regular"', ...defaultTheme.fontFamily.sans],
         mono: ['"DM Mono"', ...defaultTheme.fontFamily.mono],
       },
       colors: {

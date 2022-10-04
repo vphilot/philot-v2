@@ -4,6 +4,7 @@ import { setupLayouts } from 'virtual:generated-layouts'
 import App from './App.vue'
 
 import './styles/main.css'
+import './styles/fonts.css'
 
 const routes = setupLayouts(generatedRoutes)
 

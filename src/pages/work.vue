@@ -8,7 +8,7 @@ useHead({
 </script>
 
 <template>
-  <div class="w-full md:w-2/3 font-serif font-extralight text-lg tracking-wide leading-relaxed">
+  <div class="w-full md:w-2/3 font-extralight text-lg tracking-wide leading-relaxed">
     <section>
       <h1 class="text-4xl md:text-5xl font-extralight md:font-thin tracking-wide mb-8 font-sans bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-pink-500 dark:from-blue-500 dark:to-green-400">
         Currently: Intermediate Front-end Developer at
