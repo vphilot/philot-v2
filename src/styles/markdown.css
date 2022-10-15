@@ -21,7 +21,7 @@
 }
 
 .prose ul {
-  @apply font-serif font-extralight text-lg tracking-wide list-disc pl-4 mb-4;
+  @apply font-sans text-lg tracking-wide list-disc pl-4 mb-4;
 }
 
 .prose h2 {
@@ -30,6 +30,10 @@
 
 .prose blockquote {
   @apply ml-8;
+}
+
+.prose pre {
+  @apply mb-8;
 }
 /*
 html:not(.dark) .prose {

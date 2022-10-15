@@ -2,4 +2,5 @@
   font-family: 'Switzer-Regular';
   font-style: normal;
   src: local('Switzer-Regular'), url(../assets/fonts/switzer/Switzer-Regular.ttf) format('truetype');
+  font-display: swap;
 }

@@ -1,7 +1,7 @@
 <template>
   <Container>
     <Navigation />
-    <h1 class="text-4xl md:text-5xl font-extralight md:font-thin tracking-wide  bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-pink-500 dark:from-blue-500 dark:to-green-400 break-words md:leading-snug">
+    <h1 class="text-4xl md:text-7xl tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-pink-500 dark:from-blue-500 dark:to-green-400 break-words">
       {{ $route.name }}
     </h1>
 

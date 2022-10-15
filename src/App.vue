@@ -5,6 +5,7 @@ useHead({
     { name: 'description', content: 'Front end UI developer' },
   ],
 })
+
 </script>
 
 <template>

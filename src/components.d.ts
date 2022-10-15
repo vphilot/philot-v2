@@ -9,10 +9,12 @@ declare module 'vue' {
     DividerY: typeof import('./components/shared/DividerY.vue')['default']
     FrontEndIcon: typeof import('./components/icons/FrontEndIcon.vue')['default']
     HTMLIcon: typeof import('./components/icons/HTMLIcon.vue')['default']
+    IntersectionObserved: typeof import('./components/IntersectionObserved.vue')['default']
     Link: typeof import('./components/shared/Link.vue')['default']
     LinkRoute: typeof import('./components/shared/LinkRoute.vue')['default']
     Navigation: typeof import('./components/Navigation.vue')['default']
     ReactIcon: typeof import('./components/icons/ReactIcon.vue')['default']
+    Section: typeof import('./components/Section.vue')['default']
     TypescriptIcon: typeof import('./components/icons/TypescriptIcon.vue')['default']
     VueIcon: typeof import('./components/icons/VueIcon.vue')['default']
   }
