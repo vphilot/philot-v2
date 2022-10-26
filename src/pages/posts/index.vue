@@ -33,7 +33,7 @@ useHead({
       <IntersectionObserved>
         <router-link :to="post.path">
           <div>
-            <Icon :icon="post.icon" width="64" class="w-8 h-8 mb-2 text-pink-500 dark:text-green-500" />
+            <Icon :icon="post.icon" width="64" class="w-8 h-8 mb-2 text-green-600 dark:text-green-500" />
             <h2 class="text-3xl lg:text-5xl font-extralight md:font-thin tracking-wide lg:leading-snug">
               {{ post.name }}
             </h2>

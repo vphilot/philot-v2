@@ -63,7 +63,7 @@ onMounted(() => {
           class="flex space-x-4 items-center"
         >
           <component :is="Icons[index]" class="w-12 h-12 lg:w-24 lg:h-24 stroke-blue-500 stroke-15" />
-          <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-pink-500 dark:from-blue-500 dark:to-green-400">{{ role }}</span>
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-600 dark:from-blue-500 dark:to-green-400">{{ role }}</span>
         </div>
       </TransitionGroup>
     </div>
@@ -103,15 +103,15 @@ onMounted(() => {
           </LinkRoute>
         </div>
 
-        <div class="flex space-x-2">
+        <div class="flex space-x-4">
           <a rel="noreferrer" href="https://github.com/vphilot" title="Github" target="_blank">
-            <Icon icon="iconoir:github" width="64" class="w-8 h-8 text-blue-500" />
+            <Icon icon="iconoir:github" width="64" class="w-8 h-8 text-green-600 dark:text-green-400" />
           </a>
           <a rel="noreferrer" href="https://www.linkedin.com/in/vphilot/?locale=en_US" title="Linkedin" target="_blank">
-            <Icon icon="iconoir:linkedin" width="64" class="w-8 h-8 text-blue-500" />
+            <Icon icon="iconoir:linkedin" width="64" class="w-8 h-8 text-green-600 dark:text-green-400" />
           </a>
           <a rel="noreferrer" href="https://twitter.com/vphilot" title="Twitter" target="_blank">
-            <Icon icon="iconoir:twitter" width="64" class="w-8 h-8 text-blue-500" />
+            <Icon icon="iconoir:twitter" width="64" class="w-8 h-8 text-green-600 dark:text-green-400" />
           </a>
         </div>
       </IntersectionObserved>
@@ -232,20 +232,20 @@ onMounted(() => {
           <li>
             I have no preferred browser <em>(unpopular opinion alert)</em> but I like Safari for convenience and Chrome for development
           </li>
-          <li>
+          <li class="">
             I use a Macbook Pro 15 (2019) and my favourite MacOS productiviy tools are
             <Link title="CopyClip" url="https://apps.apple.com/us/app/copyclip-clipboard-history/id595191960?mt=12">
               CopyClip
-            </Link>,
+            </Link>
             <Link title="Magnet" url="https://magnet.crowdcafe.com/">
               Magnet
-            </Link>,
+            </Link>
             <Link title="ColorSlurp" url="https://colorslurp.com/">
               ColorSlurp
-            </Link>,
+            </Link>
             <Link title="Amphetamine" url="https://apps.apple.com/us/app/amphetamine/id937984704?mt=12">
               Amphetamine
-            </Link>,  and
+            </Link>  and
             <Link title="Raycast" url="https://www.raycast.com/">
               Raycast
             </Link>
@@ -254,7 +254,7 @@ onMounted(() => {
             I love the convenience of having a full USB-C hub display and I'm pretty satisfied with my
             <Link title="Dell P2721Q display" url="https://www.dell.com/en-sg/shop/dell-27-4k-usb-c-monitor-p2721q/apd/210-axtl/monitors-monitor-accessories">
               Dell P2721Q
-            </Link> &nbsp; since late 2020
+            </Link> since late 2020
           </li>
         </ul>
       </IntersectionObserved>
@@ -276,9 +276,6 @@ onMounted(() => {
           </li>
           <li>
             I was an Architect before working with Web Development full time. I carry a lot of analytical thinking and design strategy/planning from the great experiences I had back then. Just took me many years of education and work experience to realize I really liked computers after all.
-          </li>
-          <li>
-            I'm into biking, skating, gaming, and painting.
           </li>
         </ul>
       </IntersectionObserved>

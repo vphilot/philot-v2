@@ -15,7 +15,7 @@ module.exports = {
       },
       colors: {
         light: '#E8E8E8',
-        dark: '#292929',
+        dark: '#131313',
       },
       transitionTimingFunction: {
         'in-expo': 'cubic-bezier(0.95, 0.05, 0.795, 0.035)',

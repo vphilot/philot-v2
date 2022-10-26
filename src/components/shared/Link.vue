@@ -20,13 +20,13 @@ defineProps({
 </script>
 
 <template>
-  <a rel="noreferrer" :href="url" :title="title" :target="external ? '_blank' : '_self'" v-bind="$attrs" :class="['inline-flex items-center', ...[dashed ? 'underline underline-offset-4 decoration-pink-500 dark:decoration-green-500 decoration-dotted' : 'border-b border-b-pink-500 dark:border-b-green-500']]">
+  <a rel="noreferrer" :href="url" :title="title" :target="external ? '_blank' : '_self'" v-bind="$attrs" :class="['inline-flex items-center', ...[dashed ? 'underline underline-offset-4 decoration-green-600 dark:decoration-green-500 decoration-dotted' : 'border-b border-b-green-600 dark:border-b-green-500']]">
     <span class="shrink-0">
       <slot />
     </span>
     <Icon
-      v-if="download" icon="wi:direction-down" width="64" class="text-pink-500 dark:text-green-500 w-6 h-6"
+      v-if="download" icon="wi:direction-down" width="64" class="text-green-600 dark:text-green-500 w-6 h-6"
     />
-    <Icon v-else-if="external" icon="wi:direction-up-right" width="64" class="text-pink-500 dark:text-green-500 w-6 h-6" />
+    <Icon v-else-if="external" icon="wi:direction-up-right" width="64" class="text-green-600 dark:text-green-500 w-6 h-6" />
   </a>
 </template>
