@@ -8,8 +8,8 @@
 import { AmbientLight, Box3, BoxGeometry, BufferAttribute, Clock, Color, Mesh, MeshBasicMaterial, MeshStandardMaterial, PerspectiveCamera, PlaneBufferGeometry, PlaneGeometry, RawShaderMaterial, Scene, SphereGeometry, SpotLight, Vector3, WebGLRenderer } from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
-// import vertexShader from './shaders/3/vertex.glsl'
-// import fragmentShader from './shaders/3/fragment.glsl'
+import vertexShader from './shaders/3/vertex.glsl'
+import fragmentShader from './shaders/3/fragment.glsl'
 
 // scene
 const scene = new Scene()
@@ -25,11 +25,11 @@ camera.position.set(2, 2, 2)
 const orbitControls = new OrbitControls(camera, renderer.domElement)
 
 const geometry = new PlaneBufferGeometry(1, 1, 32, 32)
-// const material = new RawShaderMaterial({ vertexShader, fragmentShader })
+const material = new RawShaderMaterial({ vertexShader, fragmentShader })
 
-// const mesh = new Mesh(geometry, material)
+const mesh = new Mesh(geometry, material)
 
-// scene.add(mesh)
+scene.add(mesh)
 
 const refresh = async() => {
   orbitControls.update()
