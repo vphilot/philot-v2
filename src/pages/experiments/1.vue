@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { AmbientLight, Box3, BoxGeometry, BufferAttribute, Color, Mesh, MeshStandardMaterial, PerspectiveCamera, PlaneGeometry, Scene, ShaderMaterial, SpotLight, Vector3, WebGLRenderer } from 'three'
+import { AmbientLight, Box3, BoxGeometry, BufferAttribute, Color, Mesh, MeshStandardMaterial, PerspectiveCamera, PlaneGeometry, Scene, ShaderMaterial, SphereGeometry, SpotLight, Vector3, WebGLRenderer } from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 import { setHelpers } from '../../../utils/utils'
@@ -29,29 +29,26 @@ const orbitControls = new OrbitControls(camera, renderer.domElement)
 
 // lights
 const ambientLight = new AmbientLight(0xFFFFFF, 0.5)
-const spotLight1 = new SpotLight(0xFFFFFF, 0.5)
-spotLight1.castShadow = true
-spotLight1.position.set(2, 2, 2)
 
 scene.add(ambientLight)
-scene.add(spotLight1)
 
 scene.background = new Color('#ddd')
 
 // geometry
-const boxGeometry = new BoxGeometry(1, 1, 1, 20, 20, 20)
+// const boxGeometry = new BoxGeometry(1, 1, 1, 20, 20, 20)
+const sphereGeometry = new SphereGeometry(1, 100, 100)
 
 // shader
 const uniforms = {
   delta: { value: 0 },
 }
 
-const vertexDisplacement = new Float32Array(boxGeometry.attributes.position.count)
+const vertexDisplacement = new Float32Array(sphereGeometry.attributes.position.count)
 
 for (let i = 0; i < vertexDisplacement.length; i++)
   vertexDisplacement[i] = Math.sin(i)
 
-boxGeometry.setAttribute('vertexDisplacement', new BufferAttribute(vertexDisplacement, 1))
+sphereGeometry.setAttribute('vertexDisplacement', new BufferAttribute(vertexDisplacement, 1))
 
 const vertexShader = `
 attribute float vertexDisplacement;
@@ -65,10 +62,10 @@ void main() {
   vec3 p = position;
 
   p.x += sin(vertexDisplacement * delta);
-  p.y += cos(vertexDisplacement * 0.1);
-  p.z += atan(vertexDisplacement * 0.1);
+  p.y += cos(vertexDisplacement * delta);
+  p.z += atan(vertexDisplacement * delta);
 
-  vec4 modelViewPosition = modelViewMatrix * vec4(p, 1.0);
+  vec4 modelViewPosition = modelViewMatrix * vec4(p, 2.0);
   gl_Position = projectionMatrix * modelViewPosition;
 }
 `
@@ -94,27 +91,18 @@ const boxMaterial = new ShaderMaterial({
 })
 
 // const boxMaterial = new MeshStandardMaterial({ color: new Color('#eee') })
-const boxMesh = new Mesh(boxGeometry, boxMaterial)
+const boxMesh = new Mesh(sphereGeometry, boxMaterial)
 boxMesh.receiveShadow = true
 boxMesh.castShadow = true
 const bBox = new Box3().setFromObject(boxMesh)
 const boxDimensions = new Vector3()
 bBox.getSize(boxDimensions)
-boxMesh.position.set(0, boxDimensions.y / 2, 0)
+boxMesh.position.set(0, 0, 0)
 scene.add(boxMesh)
-
-const planeGeometry = new PlaneGeometry(10, 10, 10, 10)
-const planeMaterial = new MeshStandardMaterial()
-const planeMesh = new Mesh(planeGeometry, planeMaterial)
-planeMesh.rotateX(-Math.PI / 2)
-planeMesh.receiveShadow = true
-planeMesh.castShadow = false
-
-scene.add(planeMesh)
 
 const refresh = async() => {
   // shader
-  boxMesh.material.uniforms.delta.value += 0.1
+  boxMesh.material.uniforms.delta.value += 0.01
   // rest
   orbitControls.update()
   requestAnimationFrame(refresh)
