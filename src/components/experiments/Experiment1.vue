@@ -1,0 +1,112 @@
+
+<template>
+  <div>
+    <div id="renderer" />
+  </div>
+</template>
+
+<script setup lang="ts">
+import { AmbientLight, Box3, BufferAttribute, Color, Mesh, PerspectiveCamera, Scene, ShaderMaterial, SphereGeometry, Vector3, WebGLRenderer } from 'three'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+
+// scene
+const scene = new Scene()
+
+// renderer
+const renderer = new WebGLRenderer({ antialias: true, alpha: false, preserveDrawingBuffer: true })
+renderer.shadowMap.enabled = true
+renderer.setSize(1024, 1024)
+
+// camera
+const camera = new PerspectiveCamera(50, 1, 0.1, 1000)
+camera.position.set(2, 2, 2)
+const orbitControls = new OrbitControls(camera, renderer.domElement)
+
+// lights
+const ambientLight = new AmbientLight(0xFFFFFF, 0.5)
+
+scene.add(ambientLight)
+
+scene.background = new Color('#ddd')
+
+// geometry
+// const boxGeometry = new BoxGeometry(1, 1, 1, 20, 20, 20)
+const sphereGeometry = new SphereGeometry(1, 100, 100)
+
+// shader
+const uniforms = {
+  delta: { value: 0 },
+}
+
+const vertexDisplacement = new Float32Array(sphereGeometry.attributes.position.count)
+
+for (let i = 0; i < vertexDisplacement.length; i++)
+  vertexDisplacement[i] = Math.sin(i)
+
+sphereGeometry.setAttribute('vertexDisplacement', new BufferAttribute(vertexDisplacement, 1))
+
+const vertexShader = `
+attribute float vertexDisplacement;
+uniform float delta;
+varying float vOpacity;
+varying vec3 vUv;
+
+void main() {
+  vUv = position;
+  vOpacity = vertexDisplacement;
+  vec3 p = position;
+
+  p.x += sin(vertexDisplacement * delta);
+  p.y += cos(vertexDisplacement * delta);
+  p.z += atan(vertexDisplacement * delta);
+
+  vec4 modelViewPosition = modelViewMatrix * vec4(p, 2.0);
+  gl_Position = projectionMatrix * modelViewPosition;
+}
+`
+
+const fragmentShader = `
+uniform float delta;
+varying float vOpacity;
+varying vec3 vUv;
+
+void main() {
+  float r = 1.0 * cos(vUv.x * delta);
+  float g = 1.0 * sin(delta) * 0.5;
+  float b = 1.0 * cos(vUv.x * delta);
+
+  gl_FragColor = vec4(r, g, b, 1.0);
+}
+`
+
+const boxMaterial = new ShaderMaterial({
+  uniforms,
+  fragmentShader,
+  vertexShader,
+})
+
+// const boxMaterial = new MeshStandardMaterial({ color: new Color('#eee') })
+const boxMesh = new Mesh(sphereGeometry, boxMaterial)
+boxMesh.receiveShadow = true
+boxMesh.castShadow = true
+const bBox = new Box3().setFromObject(boxMesh)
+const boxDimensions = new Vector3()
+bBox.getSize(boxDimensions)
+boxMesh.position.set(0, 0, 0)
+scene.add(boxMesh)
+
+const refresh = async() => {
+  // shader
+  boxMesh.material.uniforms.delta.value += 0.01
+  // rest
+  orbitControls.update()
+  requestAnimationFrame(refresh)
+  renderer.render(scene, camera)
+}
+
+onMounted(async() => {
+  (document.querySelector('#renderer') as HTMLElement).appendChild(renderer.domElement)
+  await refresh()
+})
+
+</script>

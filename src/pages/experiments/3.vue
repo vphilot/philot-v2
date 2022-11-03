@@ -1,5 +1,5 @@
 <template>
   <client-only>
-    <Test />
+    <Experiment3 />
   </client-only>
 </template>
