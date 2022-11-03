@@ -14,6 +14,7 @@ declare module 'vue' {
     LinkRoute: typeof import('./components/shared/LinkRoute.vue')['default']
     Navigation: typeof import('./components/Navigation.vue')['default']
     ReactIcon: typeof import('./components/icons/ReactIcon.vue')['default']
+    Test: typeof import('./components/experiments/test.vue')['default']
     TypescriptIcon: typeof import('./components/icons/TypescriptIcon.vue')['default']
     VueIcon: typeof import('./components/icons/VueIcon.vue')['default']
   }
