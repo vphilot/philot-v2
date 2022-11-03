@@ -10,6 +10,8 @@ declare module 'vue' {
     Experiment1: typeof import('./components/experiments/Experiment1.vue')['default']
     Experiment2: typeof import('./components/experiments/Experiment2.vue')['default']
     Experiment3: typeof import('./components/experiments/Experiment3.vue')['default']
+    Experiment4: typeof import('./components/experiments/Experiment4.vue')['default']
+    Experiment5: typeof import('./components/experiments/experiment5.vue')['default']
     FrontEndIcon: typeof import('./components/icons/FrontEndIcon.vue')['default']
     HTMLIcon: typeof import('./components/icons/HTMLIcon.vue')['default']
     IntersectionObserved: typeof import('./components/IntersectionObserved.vue')['default']

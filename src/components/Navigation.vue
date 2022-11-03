@@ -6,17 +6,27 @@ import { isDark, toggleDark } from '#/composables'
 
 <template>
   <nav class="w-full mt-4 mb-8 md:mt-16 md:mb-16 flex justify-between">
-    <div class="flex space-x-2">
-      <router-link class="" to="/" title="home">
+    <div class="flex space-x-0">
+      <router-link class="flex space-x-1 items-center text-xs pl-0 pr-4 py-2 rounded navLink transition-all" to="/" title="home" active-class="bg-dark text-light dark:bg-light dark:text-dark pl-4 transition-all">
         <Icon icon="iconoir:home-user" width="64" class="w-8 h-8" />
+        <span>index</span>
       </router-link>
 
-      <router-link class="" to="/posts" title="posts">
+      <router-link class="flex space-x-1 items-center text-xs px-4 py-2 rounded navLink" active-class="bg-dark text-light dark:bg-light dark:text-dark" to="/posts" title="posts">
         <Icon icon="fluent:notepad-20-regular" width="64" class="w-8 h-8" />
+        <span>posts</span>
       </router-link>
 
-      <router-link class="" to="/work" title="work">
+      <router-link class="flex space-x-1 items-center text-xs px-4 py-2 rounded navLink" active-class="bg-dark text-light dark:bg-light dark:text-dark" to="/work" title="work">
         <Icon icon="fluent:code-20-regular" width="64" class="w-8 h-8" />
+        <span>work</span>
+      </router-link>
+
+      <router-link class="flex space-x-1 items-center text-xs px-4 py-2 rounded navLink" active-class="bg-dark text-light dark:bg-light dark:text-dark" to="/experiments" title="lab">
+        <Icon
+          icon="fluent:beaker-20-regular" width="64" class="w-8 h-8"
+        />
+        <span>lab</span>
       </router-link>
     </div>
 
@@ -26,3 +36,15 @@ import { isDark, toggleDark } from '#/composables'
     </button>
   </nav>
 </template>
+
+<style scoped>
+@media (max-width: 768px) {
+  .navLink span {
+    display: none;
+  }
+
+  .navLink[aria-current='page'] span {
+    display: unset;
+  }
+}
+</style>

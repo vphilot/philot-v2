@@ -1,5 +1,7 @@
 <template>
-  index
+  <client-only>
+    <Experiment4 />
+  </client-only>
 </template>
 
 <script setup lang="ts">

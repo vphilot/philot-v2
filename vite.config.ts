@@ -25,7 +25,10 @@ export default defineConfig({
     Vue({
       include: [/\.vue$/, /\.md$/],
     }),
-    glsl(),
+    glsl({
+      include: ['**/*.glsl'],
+      watch: true,
+    }),
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
       extensions: ['vue', 'md'],
