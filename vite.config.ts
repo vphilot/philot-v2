@@ -155,6 +155,7 @@ export default defineConfig({
     exclude: [
       'vue-demi',
       'three',
+      'dat.gui',
     ],
   },
 })

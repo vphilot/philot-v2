@@ -8,12 +8,8 @@
 <script setup lang="ts">
 import { BufferAttribute, Clock, DoubleSide, Mesh, PerspectiveCamera, PlaneBufferGeometry, RawShaderMaterial, Scene, Vector2, WebGLRenderer } from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import { GUI } from 'dat.gui'
-
 import vertexShader from './shaders/4/vertex.glsl'
 import fragmentShader from './shaders/4/fragment.glsl'
-
-const gui = new GUI({ autoPlace: false })
 
 // clock
 const clock = new Clock()
@@ -57,9 +53,6 @@ const material = new RawShaderMaterial({
   },
 })
 
-gui.add(material.uniforms.uFrequency.value, 'x').min(0).max(20).step(0.01).name('freqX')
-gui.add(material.uniforms.uFrequency.value, 'y').min(0).max(20).step(0.01).name('freqY')
-
 const mesh = new Mesh(geometry, material)
 
 scene.add(mesh)
@@ -74,8 +67,13 @@ const refresh = async() => {
 onMounted(async() => {
   (document.querySelector('#renderer') as HTMLElement).appendChild(renderer.domElement)
   // gui
+  const dat = await import('dat.gui')
+  const gui = new dat.GUI({ autoPlace: false })
   gui.domElement.id = 'gui'
   document.getElementById('gui')?.appendChild(gui.domElement)
+  gui.add(material.uniforms.uFrequency.value, 'x').min(0).max(20).step(0.01).name('freqX')
+  gui.add(material.uniforms.uFrequency.value, 'y').min(0).max(20).step(0.01).name('freqY')
+
   await refresh()
 })
 </script>
