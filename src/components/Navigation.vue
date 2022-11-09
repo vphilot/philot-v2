@@ -7,7 +7,7 @@ import { isDark, toggleDark } from '#/composables'
 <template>
   <nav class="w-full mt-4 mb-8 md:mt-16 md:mb-16 flex justify-between">
     <div class="flex space-x-0">
-      <router-link class="flex space-x-1 items-center text-xs pl-0 pr-4 py-2 rounded navLink transition-all" to="/" title="home" active-class="bg-dark text-light dark:bg-light dark:text-dark pl-4 transition-all">
+      <router-link class="flex space-x-1 items-center text-xs px-4 py-2 rounded navLink" to="/" title="home" active-class="bg-dark text-light dark:bg-light dark:text-dark">
         <Icon icon="iconoir:home-user" width="64" class="w-8 h-8" />
         <span>index</span>
       </router-link>

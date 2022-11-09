@@ -19,7 +19,15 @@ const formatDate = (date: string) => {
 useHead({
   title: 'Vinícius Philot - Posts',
   meta: [
-    { name: 'description', content: 'Vinícius Philot is a Front-end UI developer' },
+    {
+      name: 'description', content: 'Vinícius Philot is a Front-end UI developer',
+    },
+    {
+      name: 'keywords', content: 'vue, react, development, web development, front end development',
+    },
+    {
+      name: 'author', content: 'Vinícius Philot',
+    },
   ],
 })
 </script>

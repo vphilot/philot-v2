@@ -20,3 +20,8 @@ useHead({
   ],
 })
 </script>
+
+<route lang="yaml">
+meta:
+  type: experiment
+</route>
