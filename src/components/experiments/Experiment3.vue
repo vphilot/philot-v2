@@ -1,0 +1,59 @@
+<template>
+  <div>
+    <div id="renderer" />
+  </div>
+</template>
+
+<script setup lang="ts">
+import { BufferAttribute, DoubleSide, Mesh, PerspectiveCamera, PlaneBufferGeometry, RawShaderMaterial, Scene, WebGLRenderer } from 'three'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+
+import vertexShader from './shaders/3/vertex.glsl'
+import fragmentShader from './shaders/3/fragment.glsl'
+
+// scene
+const scene = new Scene()
+
+// renderer
+const renderer = new WebGLRenderer({ antialias: true, alpha: false, preserveDrawingBuffer: true })
+renderer.shadowMap.enabled = true
+renderer.setSize(1024, 1024)
+
+// camera
+const camera = new PerspectiveCamera(50, 1, 0.1, 1000)
+camera.position.set(1, 1, 1)
+const orbitControls = new OrbitControls(camera, renderer.domElement)
+
+// geo
+const geometry = new PlaneBufferGeometry(1, 1, 64, 64)
+
+const count = geometry.attributes.position.count
+const randoms = new Float32Array(count).map((val) => {
+  return Math.random()
+})
+
+geometry.setAttribute('aRandom', new BufferAttribute(randoms, 1))
+
+// material
+const material = new RawShaderMaterial({
+  vertexShader,
+  fragmentShader,
+  transparent: true,
+  side: DoubleSide,
+})
+
+const mesh = new Mesh(geometry, material)
+
+scene.add(mesh)
+
+const refresh = async() => {
+  orbitControls.update()
+  requestAnimationFrame(refresh)
+  renderer.render(scene, camera)
+}
+
+onMounted(async() => {
+  (document.querySelector('#renderer') as HTMLElement).appendChild(renderer.domElement)
+  await refresh()
+})
+</script>

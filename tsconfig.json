@@ -30,6 +30,5 @@
   "exclude": [
     "dist",
     "node_modules",
-    "cypress"
   ]
 }

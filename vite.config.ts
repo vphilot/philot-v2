@@ -10,7 +10,8 @@ import { VitePWA } from 'vite-plugin-pwa'
 import Inspect from 'vite-plugin-inspect'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
-import VitePluginFonts from 'vite-plugin-fonts'
+import { VitePluginFonts } from 'vite-plugin-fonts'
+import glsl from 'vite-plugin-glsl'
 
 const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
 
@@ -24,7 +25,10 @@ export default defineConfig({
     Vue({
       include: [/\.vue$/, /\.md$/],
     }),
-
+    glsl({
+      include: ['**/*.glsl'],
+      watch: true,
+    }),
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
       extensions: ['vue', 'md'],
@@ -49,7 +53,6 @@ export default defineConfig({
       imports: [
         'vue',
         'vue-router',
-        'vue-i18n',
         '@vueuse/head',
         '@vueuse/core',
       ],
@@ -151,15 +154,8 @@ export default defineConfig({
     ],
     exclude: [
       'vue-demi',
+      'three',
+      'dat.gui',
     ],
-  },
-
-  // https://github.com/vitest-dev/vitest
-  test: {
-    include: ['test/**/*.test.ts'],
-    environment: 'jsdom',
-    deps: {
-      inline: ['@vue', '@vueuse', 'vue-demi'],
-    },
   },
 })

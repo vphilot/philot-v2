@@ -31,7 +31,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1 class="text-5xl md:text-6xl lg:text-9xl font-thin">
+  <h1 class="text-5xl md:text-6xl lg:text-9xl">
     <span class="relative">
       <button class="absolute -right-10 rounded-full" aria-label="toggle spelling help" @click="spellingHelp = !spellingHelp">
         <Icon v-if="spellingHelp" icon="fluent:speaker-off-20-regular" width="64" class="w-8 h-8" />
