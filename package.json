@@ -12,6 +12,7 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@vue/compiler-dom": "^3.2.45",
     "@vueuse/core": "^7.6.2",
     "@vueuse/head": "^0.7.5",
     "dracula-prism": "^2.1.7",
