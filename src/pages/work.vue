@@ -11,7 +11,7 @@ useHead({
   <div class="w-full md:w-2/3 text-lg tracking-wide leading-relaxed">
     <section>
       <h1 class="text-4xl md:text-7xl tracking-wide mb-8 font-sans bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-600 dark:from-blue-500 dark:to-green-400">
-        Currently: Intermediate Front-end Developer at
+        Currently: Lead Front-end Developer at
         <Link title="Creative Layer" url="https://www.creativelayer.com/" class="" :dashed="false">
           <!-- Safari hack -->
           <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-600 dark:from-blue-500 dark:to-green-400">
@@ -50,7 +50,7 @@ useHead({
 
     <section>
       <p>
-        If we're going <em>vintage</em> <Link url="./docs/2022-viniciusphilot-resume.pdf" download>
+        If we're going <em>vintage</em> <Link url="./docs/2023-viniciusphilot-resume.pdf" download>
           you can download my résume here
         </Link>
       </p>
