@@ -50,7 +50,7 @@ useHead({
 
     <section>
       <p>
-        If we're going <em>vintage</em> <Link url="./docs/2023-viniciusphilot-resume.pdf" download>
+        If we're going <em>vintage</em> <Link url="/docs/2023-viniciusphilot-resume.pdf" download>
           you can download my résume here
         </Link>
       </p>
