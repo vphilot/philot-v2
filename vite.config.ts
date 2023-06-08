@@ -10,7 +10,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 import Inspect from 'vite-plugin-inspect'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
-import VitePluginFonts from 'vite-plugin-fonts'
+import Unfonts from 'unplugin-fonts/vite'
 
 const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
 
@@ -49,7 +49,6 @@ export default defineConfig({
       imports: [
         'vue',
         'vue-router',
-        'vue-i18n',
         '@vueuse/head',
         '@vueuse/core',
       ],
@@ -123,7 +122,7 @@ export default defineConfig({
       enabled: false,
     }),
 
-    VitePluginFonts({
+    Unfonts({
       google: {
         families: [
           {
