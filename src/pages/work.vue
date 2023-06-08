@@ -20,7 +20,7 @@ useHead({
         </Link>
       </h1>
       <p class="mb-4">
-        Currently working for RBC's Global Cyber Security team building internal web apps that help us keep things our users safe using Vue3, Vite, and Tailwind.
+        Currently working for RBC's Global Cyber Security team building enterpprise web apps that help us keep things our users safe using Vue3, Vite, and Tailwind.
       </p>
     </section>
     <DividerY />
