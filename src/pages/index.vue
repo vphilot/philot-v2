@@ -53,7 +53,6 @@ onMounted(() => {
         leave-from-class="transform-gpu translate-y-0"
         leave-active-class="transition-all duration-500 ease-out-in absolute"
         leave-to-class="transform-gpu -translate-y-full"
-        mode="out-in"
         name="list"
       >
         <div
