@@ -84,8 +84,8 @@ onMounted(() => {
 
         <div class="grid md:grid-cols-6 gap-4 md:gap-8 mb-8 items-center">
           <p class="col-span-5 items-center">
-            Currently Intermediate Front-end developer at <Link title="Creative Layer" url="https://www.creativelayer.com/">
-              Creative Layer
+            Currently Senior Front-end developer at <Link title="Creative Layer" url="https://www.rbc.com/">
+              RBC
             </Link>
           </p>
           <LinkRoute to="work" title="work">
