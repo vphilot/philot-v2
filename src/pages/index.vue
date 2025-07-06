@@ -109,9 +109,6 @@ onMounted(() => {
           <a rel="noreferrer" href="https://www.linkedin.com/in/vphilot/?locale=en_US" title="Linkedin" target="_blank">
             <Icon icon="iconoir:linkedin" width="64" class="w-8 h-8 text-green-600 dark:text-green-400" />
           </a>
-          <a rel="noreferrer" href="https://twitter.com/vphilot" title="Twitter" target="_blank">
-            <Icon icon="iconoir:twitter" width="64" class="w-8 h-8 text-green-600 dark:text-green-400" />
-          </a>
         </div>
       </IntersectionObserved>
       <DividerY />
